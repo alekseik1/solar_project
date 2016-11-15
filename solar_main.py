@@ -6,6 +6,8 @@ from tkinter.filedialog import *
 from solar_vis import *
 from solar_model import *
 from solar_input import *
+import matplotlib.pyplot as plt
+import numpy as np
 
 perform_execution = False
 """Флаг цикличности выполнения расчёта"""
@@ -150,3 +152,14 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+x = np.arange(5000)
+plt.subplot(211)
+plt.plot(x, 30E5+2*(x-3E3)**2+2E1*(x-3E3))
+plt.grid()
+plt.xlabel('t, sec')
+plt.ylabel('v, meters per sec')
+plt.subplot(212)
+plt.grid()
+plt.plot(x, 3E5+np.sin(x/0.75E3)-(x-3E2)/3E3)
+plt.show()
