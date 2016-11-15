@@ -91,6 +91,8 @@ def open_file_dialog():
         else:
             raise AssertionError()
 
+    # Коммит от Сереги
+
 
 def save_file_dialog():
     """Открывает диалоговое окно выбора имени файла и вызывает
