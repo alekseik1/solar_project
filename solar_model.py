@@ -21,8 +21,10 @@ def calculate_force(body, space_objects):
         r = ((body.x - obj.x)**2 + (body.y - obj.y)**2)**0.5
         F = obj.m*body.m*gravitational_constant/r**2
         cos = (body.x - obj.x)/r
-        body.Fx = F*cos
-        body.Fy = F*(1-cos**2)**0.5
+        body.Fx += F*cos
+        body.Fy += F*(1-cos**2)**0.5
+        #obj.Fx -= body.Fx
+        #obj.Fy -= body.Fy
         # Вроде, должно работать. Нужно тестить
 
 
